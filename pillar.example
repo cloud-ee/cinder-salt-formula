@@ -1,11 +1,28 @@
+## database admin connection information to create keystone user and db
+## for mysql
+# mysql.host: 'localhost'
+# mysql.port: 3306
+# mysql.user: 'root'
+# mysql.pass: ''
+#
+## for postgresql
+# postgres.host: 'localhost'
+# postgres.port: '5432'
+# postgres.user: 'postgres' -> db user
+# postgres.pass: ''
+# postgres.maintenance_db: 'postgres'
+
 cinder:
   public_ip: 10.0.0.12
   internal_ip: 10.0.0.12
   admin_ip: 10.0.0.12
-  mysql:
+  db:
+    # currently supported options are mysql and postgresql
+    driver: 'mysql'
     ip: 10.0.0.12
-    password: 'pass'
+    # mysql user host
     host: '%'
+    password: 'pass'
   keystone:
     password: 'pass'
     email: zhang.lei.fly@gmail.com
